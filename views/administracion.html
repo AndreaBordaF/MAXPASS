@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Tarjetas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/modals.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Max Pass</a>
+            <ul class="links" id="main-nav">
+                <li>
+                    <a href="outofService.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="administracion.html">Administración</a>
+                </li>
+                <li>
+                    <a href="outofService.html">Finanzas</a>
+                </li>
+                <li>
+                    <a href="outofService.html">Soporte</a>
+                </li>
+            </ul>
+            <div class="icons">
+                <div>
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="hero">
+        <div class="tab-nav">
+            <ul>
+                <li class="tab">Cajas</li>
+                <li class="tab active">Tarjetas</li>
+            </ul>
+        </div>
+        <div class="sect-container">
+            <div class="block">
+                <h1>No disponible por el momento</h1>
+            </div>
+            <div class="block active">
+                <div class="filter-options">
+                    <div class="forIcon">
+                        <label class="tittle" for="datepicker">Filtrar por fecha:</label>
+                        <i class="fa-solid fa-calendar-week">
+                            <input id="datepicker" placeholder="Seleccione una fecha..."/>
+                        </i>
+                    </div>
+                    <div class="etm-op">
+                        <label class="tittle" for="etm">Filtrar por caja:</label>
+                        <select name="etm" id="slc-etm"> 
+                            <option value="0">Todas</option>
+                            <option value="1">Caja 1</option>
+                            <option value="2">Caja 2</option>
+                            <option value="3">Caja 3</option>
+                            <option value="4">Caja 4</option>
+                            <option value="5">Caja 5</option>
+                            <option value="6">Caja 6</option>
+                            <option value="7">Caja 7</option>
+                        </select>
+                    </div>
+                    <div class="state-op">
+                        <label class="tittle">Filtrar por estado:</label>
+                        <label>
+                            <input type="radio" name="status" value="all" checked>
+                            <span>Todos</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="status" id="active" value="abt-c">
+                            <span>Habilitadas</span> 
+                        </label>
+                        <label>
+                            <input type="radio" name="status" id="disable" value="dabt-c">
+                            <span>Desabilitadas</span> 
+                        </label>
+                    </div>
+                </div>
+                <div class="table">
+                    <table id="mytable">
+                        <thead>
+                            <tr>
+                                <th>N° Caja</th>
+                                <th>N° Tarjeta</th>
+                                <th>N° Chip</th>
+                                <th>Fecha Creacion</th>
+                                <th>Estado</th>
+                                <th>Saldo Anterior</th>
+                                <th>Saldo Actual</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mytlbody"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">Promedio</td>
+                                <td id="avg-balance">2500</td>
+                                <td id="avg-amount">4700</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">Suma Total</td>
+                                <td id="total-balance">2500</td>
+                                <td id="total-amount">4700</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <dialog class="modal charge-card" id="modal-pay">
+        <div class="modal-header">
+            <h3>Cargar Tarjeta</h3>
+            <button class="btn-close" id="close-pay">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <form action="" id="pay-form">
+            <div class="form-content">
+                <label class="form-group" for="card">
+                    Numero de Tarjeta
+                    <input type="text" name="card" id="pay-numCard" disabled>
+                </label>
+                <label class="form-group" for="amount">
+                    Monto a Cargar
+                    <input type="number" id="pay-amount" placeholder="ej. 5.000">
+                </label>
+                </div>
+                <div class="terms">
+                    <input type="checkbox" name="terms" required>
+                    <label for="terms">
+                        Acepto los <a href="#">Terminos y Coondiciones de Uso</a> y la <a href="#">Politica de Privacidad</a>
+                    </label>
+                </div>
+            <div class="form-buttons">
+                <button class="btn-cancel" id="cancel-pay">Cancelar</button>
+                <button class="btn-submit" type="submit" id="make-pay">Cargar Monto</button>
+            </div>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="modal edit-card" id="modal-edit">
+        <div class="modal-header">
+            <h3>Editar Tarjeta</h3>
+        </div>
+        <form action="" id="edit-form">
+            <div class="form-content">
+                <label class="form-group" for="card">
+                    Numero de Tarjeta
+                    <input type="text" name="card" id="edit-numCard">
+                </label>
+                <label class="form-group" for="chip">
+                    Numero de Chip
+                    <input type="text" id="edit-numChip">
+                </label>
+                <label class="form-group icon" for="datepicker">
+                    Fecha de Vencimiento
+                    <i class="fa-solid fa-calendar-week">
+                        <input id='edit-dateStar'/>
+                    </i>
+                </label>
+                <label class="form-group state" for="state">
+                    Estado
+                    <input class="tonggle-btn" id="edit-status" type="checkbox">
+                </label>
+                
+                <div class="form-buttons">
+                    <button class="btn-cancel" id="cancel-edit">Cancelar</button>
+                    <button class="btn-submit" type="submit" id="submit-edit" disabled>Guardar Cambios</button>
+                </div>
+        </form>
+    </dialog>
+    <dialog class="modal prosses" id="modal-pros">
+        <div class="modal-container">
+            <div class="state-header">
+                <div class="layout">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i>
+                </div>
+                <span>Por favor espere...</span>
+            </div>
+            <p>Estamos procesando su compra...</p>
+        </div>
+    </dialog>
+    <dialog class="modal success" id="modal-sucs">
+        <div class="modal-container">
+            <div class="state-header">
+                <div class="layout">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <span id="success-tittle">¡Transacción Exitosa!</span>
+            </div>
+            <div class="state-content">
+                <p id="success-message">Se ha cargado el monto a la tarjeta.</p>
+                <button class="btn-st-close" id="close-sucs">Aceptar</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <script type="module" src="../controls/controls.js"></script>
+</body>
+</html>

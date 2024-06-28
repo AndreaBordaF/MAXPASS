@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+/* 
+    font-family: "Mukta", sans-serif; 
+*/
+
+:root{
+    --cl-bg: #e2dff4;
+    --primary: #705ec9;
+    --primary-W60: #c6bfe9;
+    --primary-w80: #e2dff4;
+    --primary-W90: #8f7ed1;
+    --primary-D20: #5a4ba1;
+    --primary-D40: #433879;
+    --accent: #FFA26B;
+    --accent-W60: #ffdac4;
+    --accent-W80: #ffece1;
+    --s-yellow: #ffc76f;
+    --s-yellow-W60: #ffe9c5;
+    --s-yellew-W80: #fff4e2;
+    --s-green: #18D89D;
+    --s-green-W60: #a3efd8;
+    --s-green-W80: #d1f7eb;
+    --s-red: #fb6b97;
+    --s-red-w60: #fdc4d5;
+    --s-red-W80: #fee1ea;
+    --s-blue: #4983f4;
+    --s-blue-W60: #b6cdfb;
+    --s-blue-w80: #dbe6fd;
+    --n-dark: #3a355c;
+    --n-dark-90: #524767;
+    --n-dark-70: #797089;
+    --n-dark-40: #b2adbb;
+    --n-dark-15: #e2e0e6;
+    --n-dark-5: #f5f5f7;
+    --n-white: #fff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Mukta", sans-serif;
+    background-color: var(--cl-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.content{
+    background-color: var(--n-white);
+    width: 50%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: -1px 0px 25px 0px rgba(112, 94, 201, 0.517);
+}
+
+.content img{
+    height: 50%;
+}
+
+.content .text-content{
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.text-content h1{
+    color: var(--primary);
+}
+
+.text-content h2{
+    color: var(--accent);
+}
+
+.text-content p{
+    color: var(--n-dark-40);
+}
+
+.text-content p a{
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.text-content p a:hover{
+    color: var(--accent);
+    text-decoration: underline;
+}

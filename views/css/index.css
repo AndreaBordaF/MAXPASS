@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+/*
+    font-family: "Mukta", sans-serif;
+*/
+
+/* GENERAL STYLES */
+:root{
+    --cl-bg: #F2F5FB;
+    --primary: #705ec9;
+    --primary-W60: #c6bfe9;
+    --primary-w80: #e2dff4;
+    --primary-W90: #8f7ed1;
+    --primary-D20: #5a4ba1;
+    --primary-D40: #433879;
+    --accent: #FFA26B;
+    --accent-W60: #ffdac4;
+    --accent-W80: #ffece1;
+    --s-yellow: #ffc76f;
+    --s-yellow-W60: #ffe9c5;
+    --s-yellew-W80: #fff4e2;
+    --s-green: #18D89D;
+    --s-green-W60: #a3efd8;
+    --s-green-W80: #d1f7eb;
+    --s-red: #fb6b97;
+    --s-red-w60: #fdc4d5;
+    --s-red-W80: #fee1ea;
+    --s-blue: #4983f4;
+    --s-blue-W60: #b6cdfb;
+    --s-blue-w80: #dbe6fd;
+    --n-dark: #3a355c;
+    --n-dark-90: #524767;
+    --n-dark-70: #797089;
+    --n-dark-40: #b2adbb;
+    --n-dark-15: #e2e0e6;
+    --n-dark-5: #f5f5f7;
+    --n-white: #fff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+body{
+    font-family: "Mukta", sans-serif;
+    background-color: var(--cl-bg);
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+button{
+    font-family: "Mukta", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.1s ease-in;
+}
+
+
+
+/* -------- HEADER STYLE --------*/
+.header{
+    background-color: var(--primary);
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.header .nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+.nav .logo{
+    color: var(--n-white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+.nav ul li{
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+.nav li a{
+    color: var(--n-white);
+    font-size: 1rem;
+    padding: 0 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav li a:hover{
+    font-weight: 600;
+    padding: 0 1.2rem;
+    border-radius: 2rem;
+    background-color: var(--primary-W90);
+}
+
+.nav li a.active{
+    font-weight: 600;
+    padding: 0 1.2rem;
+    border-radius: 2rem;
+    background-color: var(--primary-W90);
+}
+
+.nav .icons{
+    display: flex;
+    align-items: center;
+}
+
+.nav .icons i{
+    color: var(--n-white);
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+/* ---------- MAIN GENERAL STYLE ----------*/
+
+/* TABS MENU */
+.hero .tab-nav {
+    background-color: #fff;
+    width: 100vw;
+    padding: 0 1.2rem;
+}
+
+.tab-nav ul .tab {
+    display: inline-block;
+}
+
+.tab-nav .tab {
+    font-size: 1.2rem;
+    color: var(--n-dark-70);
+    padding: .2rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-nav .tab:hover {
+    color: var(--primary-D40);
+    font-weight: 500;
+    background-color: var(--n-dark-5);
+}
+
+.tab-nav .tab.active {
+    color: var(--primary-D40);
+    font-weight: 500;
+    border-bottom: .35rem solid var(--primary);
+} 
+
+/* SECTION CONTEINER */
+.hero .sect-container {
+    min-height: 100%;
+    position: relative;
+}
+
+.sect-container .block{
+    padding: 0 1.2rem;
+    margin: 1rem 0;
+    position: absolute;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.sect-container .block.active{
+    height: 81vh;
+    width: 100vw;
+    opacity: 1;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ------ SECTION CARD CONTENT STYLE ------ */
+
+/* FILTERS */
+.block .filter-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.filter-options .tittle{
+    color: var(--primary);
+}
+
+/* SELECT */
+.filter-options .etm-op{
+    margin-right: 40px;
+}
+.etm-op select{
+    cursor: pointer;
+    width: 175px;
+    padding: 4px 15px;
+    font-family: "Mukta", sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 2px solid var(--primary-W60);
+    color: var(--primary-W60);
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.etm-op select:hover{
+    border-color: var(--primary);
+    color: var(--primary-W90);
+    box-shadow: 0 0 10px 0 var(--primary-w80);
+}
+
+.etm-op select:focus{
+    border-color: var(--primary);
+    color: var(--primary-W90);
+    box-shadow: 0 0 10px 0 var(--primary-w80);
+}
+
+/* STATE */
+.filter-options .state-op{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 10px;
+}
+
+.state-op label{
+    display: flex;
+    cursor: pointer;
+    font-weight: 400;
+    position: relative;
+    align-items: center;
+    margin: 0px 5px;
+    padding: .2rem .7rem;
+    color: var(--primary-W60);
+}
+
+.state-op label:hover{
+    background-color:var(--primary-w80);
+    color: var(--primary);
+    border-radius: 3rem;
+}
+
+.state-op label:has(input[type="radio"]:checked) {
+    background-color:var(--primary-w80);
+    border-radius: 3rem;
+}
+
+.state-op label:hover input[type='radio']{
+    transform: scale(1.1);
+    border-color: var(--primary-w60);
+}
+
+.state-op input[type='radio'] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--primary-W60);
+    border-radius: 50%;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    margin: 5px;
+}
+
+.state-op label input[type='radio']:checked{
+    border: 4px solid var(--primary);
+    color: var(--primary);
+}
+
+.state-op input[type='radio']:checked + span{
+    color: var(--primary);
+}
+
+/*DATEPICKER*/
+.forIcon input{
+    border: none;
+    cursor: pointer;
+    margin-left: 4px;
+    color: var(--primary-W90);
+}
+
+.forIcon input:focus{
+    outline: none;
+}
+
+.forIcon i{
+    background-color: #fff;
+    padding: 7px 14px;
+    color: var(--primary-W60);
+    border: 2px solid var(--primary-W60);
+    border-radius: .3rem;
+}
+
+.forIcon i:hover{
+    color: var(--primary-W90);
+    border-color: var(--primary-W90);
+}
+
+/* DATATABLE */
+.table{
+    min-width: 95vw;
+    margin: 1rem 0;
+    display: grid;
+    justify-content: center;
+    color: var(--n-dark-70);
+    font-size: 1rem;
+    overflow: auto;
+}
+
+.table table{
+    background-color: #fff;
+    min-width: 90vw;
+    border-radius: 8px;
+    border-collapse: collapse;
+    box-shadow: 0 8px 15px #705ec968;
+}
+
+.table thead th{
+    padding: 0.5rem 1.3rem;
+}
+
+.table tbody td{
+    padding: 0.5rem 1.3rem;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.status .tag{
+    border-radius: 5px;
+}
+
+.enable{
+    background-color: var(--s-green-W80);
+    border: 1px solid var(--s-green);
+    color: var(--s-green);
+}
+
+.disable{
+    background-color: var(--s-red-W80);
+    border: 1px solid var(--s-red);
+    color: var(--s-red);
+}
+
+.table  tbody tr:nth-child(even){
+    background-color: #f8f7fc;
+}
+
+.table tfoot td{
+    padding: 0.5rem 1.3rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* BUTTONS */
+.btn-icon{
+    width: 10%;
+    height: 10%; 
+    padding: 1px 6px;
+    border-radius: 100%;
+    background-color:  transparent;
+    border: none;
+    color: #4f546c;
+    cursor: pointer;
+}
+
+.btn-icon:hover{
+    transform: scale(1.1);
+}
+
+.btn-icon:active{
+    transform: scale(1);
+}
+
+.buttons .btn-icon{
+    margin-right: .1rem;
+}
+
+.buttons .pay:hover{
+    color: var(--s-blue);
+    border: none;
+    transform: scale(1.1);
+}
+
+.buttons .pay:active{
+    transform: scale(1);
+}
+
+.buttons .edit:hover{
+    color: var(--s-yellow);
+}
